@@ -23,7 +23,7 @@ Documenter.makedocs(;
   sitename="ITensor ecosystem docs",
   modules=[ITensorDocsNext],
   warnonly=true,
-  pages=["index.md"],
+  pages=["index.md", "ecosystem_overview.md"],
 )
 
 @info "Building aggregate ITensorDocsNext site"
