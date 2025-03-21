@@ -28,6 +28,7 @@
 
 ### Plan to bring back
 
+- HDF5 saving and loading over ITensors, BlockSparseArrays, etc.
 - `ITensors.delta`/`ITensors.δ` constructors for constructing diagonal ITensors with uniform diagonal values of 1. They should be overloads/wrappers around the same functions in `DiagonalArrays.jl`, see https://github.com/ITensor/DiagonalArrays.jl/pull/6.
 - `NDTensors.BackendSelection.Algorithm`/`NDTensors.BackendSelection.@Algorithm_str` should be removed from here and moved to a new package `BackendSelection.jl`.
 - `NDTensors.denseblocks` was defined in NDTensors.jl to convert a block sparse array to the same block sparse array structure but with dense blocks (say of the blocks themselves were diagonal or sparse in some other way). I think this is useful, it should be defined in BlockSparseArrays.jl and based on a generic function `dense` in SparseArraysBase.jl that can generically convert a sparse array to dense while trying to preserve properties of the sparse array, like if it was allocated on GPU originally.
