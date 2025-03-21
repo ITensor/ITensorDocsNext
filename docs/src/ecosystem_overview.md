@@ -1,4 +1,4 @@
-# ITensor ecosystem overview
+# ITensor Ecosystem Overview
 
 ```mermaid
 graph TD
