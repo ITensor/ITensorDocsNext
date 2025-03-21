@@ -1,24 +1,121 @@
-using ITensorDocsNext: ITensorDocsNext
-using Documenter: Documenter, DocMeta, deploydocs, makedocs
+# Script to build the MultiDocumenter docs
+#
+#   julia --project docs/make.jl [--temp] [deploy]
+#
+# When `deploy` is passed as an argument, it goes into deployment mode
+# and attempts to push the generated site to gh-pages. You can also pass
+# `--temp`, in which case the source repositories are cloned into a temporary
+# directory (as opposed to `docs/clones`).
+using Documenter: Documenter
+using ITensorDocs: ITensorDocs
+using MultiDocumenter: MultiDocumenter
 
-DocMeta.setdocmeta!(
-  ITensorDocsNext, :DocTestSetup, :(using ITensorDocsNext); recursive=true
+clonedir = ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "clones")
+outpath = mktempdir()
+@info """
+Cloning packages into: $(clonedir)
+Building aggregate site into: $(outpath)
+"""
+
+@info "Building Documenter site for ITensorDocs"
+open(joinpath(@__DIR__, "src", "index.md"); write=true) do io
+  write(io, read(joinpath(@__DIR__, "..", "README.md")))
+end
+Documenter.makedocs(;
+  sitename="ITensor ecosystem docs",
+  modules=[ITensorDocs],
+  warnonly=true,
+  pages=["index.md"],
 )
 
-include("make_index.jl")
+function itensor_multidocref(pkgname::String; clonedir::String=clonedir)
+  return MultiDocumenter.MultiDocRef(;
+    upstream=joinpath(clonedir, pkgname),
+    path=pkgname,
+    name=pkgname,
+    giturl="https://github.com/ITensor/$(pkgname).jl.git",
+  )
+end
 
-makedocs(;
-  modules=[ITensorDocsNext],
-  authors="ITensor developers <support@itensor.org> and contributors",
-  sitename="ITensorDocsNext.jl",
-  format=Documenter.HTML(;
-    canonical="https://ITensor.github.io/ITensorDocsNext.jl",
-    edit_link="main",
-    assets=String[],
+@info "Building aggregate ITensorDocs site"
+docs = [
+  # We also add ITensorDocs's own generated pages
+  MultiDocumenter.MultiDocRef(;
+    upstream=joinpath(@__DIR__, "build"),
+    path="Overview",
+    name="Home",
+    fix_canonical_url=false,
   ),
-  pages=["Home" => "index.md", "Reference" => "reference.md"],
+  MultiDocumenter.MegaDropdownNav(
+    "Array Libraries",
+    itensor_multidocref.([
+      "ITensorBase",
+      "NamedDimsArrays",
+      "BlockSparseArrays",
+      "SparseArraysBase",
+      "DiagonalArrays",
+      "TensorAlgebra",
+    ]),
+  ),
+  MultiDocumenter.MegaDropdownNav(
+    "Group Symmetric Arrays",
+    itensor_multidocref.([
+      "GradedUnitRanges",
+      "SymmetrySectors",
+    ]),
+  ),
+  MultiDocumenter.MegaDropdownNav(
+    "Developer Tools",
+    itensor_multidocref.([
+      "DerivableInterfaces", "TypeParameterAccessors", "MapBroadcast"
+    ]),
+  ),
+]
+
+MultiDocumenter.make(
+  outpath,
+  docs;
+  search_engine=MultiDocumenter.SearchConfig(;
+    index_versions=["stable"], engine=MultiDocumenter.FlexSearch
+  ),
+  rootpath="/ITensorDocs/",
+  canonical_domain="https://itensor.github.io/",
+  sitemap=true,
 )
 
-deploydocs(;
-  repo="github.com/ITensor/ITensorDocsNext.jl", devbranch="main", push_preview=true
-)
+if "deploy" in ARGS
+  @warn "Deploying to GitHub" ARGS
+  gitroot = normpath(joinpath(@__DIR__, ".."))
+  run(`git pull`)
+  outbranch = "gh-pages"
+  has_outbranch = true
+  if !success(`git checkout $outbranch`)
+    has_outbranch = false
+    if !success(`git switch --orphan $outbranch`)
+      @error "Cannot create new orphaned branch $outbranch."
+      exit(1)
+    end
+  end
+  for file in readdir(gitroot; join=true)
+    endswith(file, ".git") && continue
+    rm(file; force=true, recursive=true)
+  end
+  for file in readdir(outpath)
+    cp(joinpath(outpath, file), joinpath(gitroot, file))
+  end
+  run(`git add .`)
+  if success(`git commit -m 'Aggregate documentation'`)
+    @info "Pushing updated documentation."
+    if has_outbranch
+      run(`git push`)
+    else
+      run(`git push -u origin $outbranch`)
+    end
+    run(`git checkout main`)
+  else
+    @info "No changes to aggregated documentation."
+  end
+else
+  @info "Skipping deployment, 'deploy' not passed. Generated files in docs/out." ARGS
+  cp(outpath, joinpath(@__DIR__, "out"); force=true)
+end
