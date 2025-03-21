@@ -7,6 +7,7 @@
 # `--temp`, in which case the source repositories are cloned into a temporary
 # directory (as opposed to `docs/clones`).
 using Documenter: Documenter
+using DocumenterMermaid: DocumenterMermaid
 using ITensorDocsNext: ITensorDocsNext
 using MultiDocumenter: MultiDocumenter
 
@@ -23,7 +24,7 @@ Documenter.makedocs(;
   sitename="ITensor ecosystem docs",
   modules=[ITensorDocsNext],
   warnonly=true,
-  pages=["index.md"],
+  pages=["index.md", "ecosystem_overview.md"],
 )
 
 @info "Building aggregate ITensorDocsNext site"
