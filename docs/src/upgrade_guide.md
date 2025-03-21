@@ -24,7 +24,7 @@
 
 ### Behavior changes
 
-- [ ] `ITensors.ITensor(a::AbstractArray, inds)`: previously it reshaped the input `a` to match the shape of `inds`. However, I think we should be strict about the shapes, especially since reshaping doesn't necessarily make sense, or at least is a lot more subtle, for certain backend arrays like BlockSparseArrays and FusionTensors. see #31.
+- `ITensors.ITensor(a::AbstractArray, inds)`: previously it reshaped the input `a` to match the shape of `inds`. However, I think we should be strict about the shapes, especially since reshaping doesn't necessarily make sense, or at least is a lot more subtle, for certain backend arrays like BlockSparseArrays and FusionTensors. see #31.
 
 ### Plan to bring back
 
