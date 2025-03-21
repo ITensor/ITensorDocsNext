@@ -43,7 +43,7 @@ docs = [
     name="Home",
     fix_canonical_url=false,
   ),
-  MultiDocumenter.MegaDropdownNav(
+  MultiDocumenter.DropdownNav(
     "Array Libraries",
     itensor_multidocref.([
       "ITensorBase",
@@ -54,10 +54,10 @@ docs = [
       "TensorAlgebra",
     ]),
   ),
-  MultiDocumenter.MegaDropdownNav(
+  MultiDocumenter.DropdownNav(
     "Group Symmetric Arrays", itensor_multidocref.(["GradedUnitRanges", "SymmetrySectors"])
   ),
-  MultiDocumenter.MegaDropdownNav(
+  MultiDocumenter.DropdownNav(
     "Developer Tools",
     itensor_multidocref.(["DerivableInterfaces", "TypeParameterAccessors", "MapBroadcast"]),
   ),
