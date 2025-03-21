@@ -7,7 +7,7 @@
 # `--temp`, in which case the source repositories are cloned into a temporary
 # directory (as opposed to `docs/clones`).
 using Documenter: Documenter
-using ITensorDocs: ITensorDocs
+using ITensorDocsNext: ITensorDocsNext
 using MultiDocumenter: MultiDocumenter
 
 clonedir = ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "clones")
@@ -17,17 +17,16 @@ Cloning packages into: $(clonedir)
 Building aggregate site into: $(outpath)
 """
 
-@info "Building Documenter site for ITensorDocs"
-open(joinpath(@__DIR__, "src", "index.md"); write=true) do io
-  write(io, read(joinpath(@__DIR__, "..", "README.md")))
-end
+@info "Building Documenter site for ITensorDocsNext"
+include("make_index.jl")
 Documenter.makedocs(;
   sitename="ITensor ecosystem docs",
-  modules=[ITensorDocs],
+  modules=[ITensorDocsNext],
   warnonly=true,
   pages=["index.md"],
 )
 
+@info "Building aggregate ITensorDocsNext site"
 function itensor_multidocref(pkgname::String; clonedir::String=clonedir)
   return MultiDocumenter.MultiDocRef(;
     upstream=joinpath(clonedir, pkgname),
@@ -36,10 +35,8 @@ function itensor_multidocref(pkgname::String; clonedir::String=clonedir)
     giturl="https://github.com/ITensor/$(pkgname).jl.git",
   )
 end
-
-@info "Building aggregate ITensorDocs site"
 docs = [
-  # We also add ITensorDocs's own generated pages
+  # We also add ITensorDocsNext's own generated pages
   MultiDocumenter.MultiDocRef(;
     upstream=joinpath(@__DIR__, "build"),
     path="Overview",
@@ -72,7 +69,7 @@ MultiDocumenter.make(
   search_engine=MultiDocumenter.SearchConfig(;
     index_versions=["stable"], engine=MultiDocumenter.FlexSearch
   ),
-  rootpath="/ITensorDocs/",
+  rootpath="/ITensorDocsNext/",
   canonical_domain="https://itensor.github.io/",
   sitemap=true,
 )
