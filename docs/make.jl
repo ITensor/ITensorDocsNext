@@ -73,6 +73,10 @@ MultiDocumenter.make(
   rootpath="/ITensorDocsNext/",
   canonical_domain="https://itensor.github.io/",
   sitemap=true,
+  assets_dir="docs/src/assets",
+  brand_image=MultiDocumenter.BrandImage(
+    "https://itensor.org", joinpath("assets", "ITensor.png")
+  ),
 )
 
 if "deploy" in ARGS
