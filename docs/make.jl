@@ -56,11 +56,13 @@ docs = [
     ]),
   ),
   MultiDocumenter.DropdownNav(
-    "Group Symmetric Arrays", itensor_multidocref.(["GradedUnitRanges", "SymmetrySectors"])
+    "Symmetric Tensors", itensor_multidocref.(["GradedUnitRanges", "SymmetrySectors"])
   ),
   MultiDocumenter.DropdownNav(
     "Developer Tools",
-    itensor_multidocref.(["DerivableInterfaces", "TypeParameterAccessors", "MapBroadcast"]),
+    itensor_multidocref.([
+      "DerivableInterfaces", "TypeParameterAccessors", "MapBroadcast", "BackendSelection"
+    ]),
   ),
 ]
 
