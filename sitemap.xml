@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://itensor.github.io/ITensorDocsNext/BackendSelection/dev/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/BackendSelection/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/BlockSparseArrays/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/BlockSparseArrays/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/DerivableInterfaces/dev/</loc></url>
