@@ -62,7 +62,11 @@ docs = [
   MultiDocumenter.DropdownNav(
     "Developer Tools",
     itensor_multidocref.([
-      "DerivableInterfaces", "TypeParameterAccessors", "MapBroadcast", "BackendSelection"
+      "DerivableInterfaces",
+      "TypeParameterAccessors",
+      "MapBroadcast",
+      "BackendSelection",
+      "ITensorPkgSkeleton",
     ]),
   ),
 ]
