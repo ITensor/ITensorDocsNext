@@ -24,7 +24,7 @@ Documenter.makedocs(;
   sitename="ITensor ecosystem docs",
   modules=[ITensorDocsNext],
   warnonly=true,
-  format=Documenter.HTML(; assets=["assets/favicon.ico"]),
+  format=Documenter.HTML(; assets=["assets/favicon.ico", "assets/extras.css"]),
   pages=["index.md", "ecosystem_overview.md", "upgrade_guide.md"],
 )
 
@@ -82,7 +82,7 @@ MultiDocumenter.make(
   sitemap=true,
   assets_dir="docs/src/assets",
   brand_image=MultiDocumenter.BrandImage(
-    "https://itensor.org", joinpath("assets", "logo.png")
+    "https://itensor.org", joinpath("assets", "logo-dark.png")
   ),
 )
 
