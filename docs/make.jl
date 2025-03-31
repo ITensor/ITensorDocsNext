@@ -57,7 +57,8 @@ docs = [
     ]),
   ),
   MultiDocumenter.DropdownNav(
-    "Symmetric Tensors", itensor_multidocref.(["GradedUnitRanges", "SymmetrySectors"])
+    "Symmetric Tensors",
+    itensor_multidocref.(["FusionTensors", "GradedUnitRanges", "SymmetrySectors"]),
   ),
   MultiDocumenter.DropdownNav(
     "Developer Tools",
