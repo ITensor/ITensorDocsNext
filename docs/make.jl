@@ -46,6 +46,9 @@ docs = [
     fix_canonical_url=false,
   ),
   MultiDocumenter.DropdownNav(
+    "Tensor Network Libraries", itensor_multidocref.(["ITensorNetworks"])
+  ),
+  MultiDocumenter.DropdownNav(
     "Array Libraries",
     itensor_multidocref.([
       "ITensorBase",
@@ -59,6 +62,9 @@ docs = [
   MultiDocumenter.DropdownNav(
     "Symmetric Tensors",
     itensor_multidocref.(["FusionTensors", "GradedUnitRanges", "SymmetrySectors"]),
+  ),
+  MultiDocumenter.DropdownNav(
+    "Graph Libraries", itensor_multidocref.(["NamedGraphs", "DataGraphs"])
   ),
   MultiDocumenter.DropdownNav(
     "Developer Tools",
