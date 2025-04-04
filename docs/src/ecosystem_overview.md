@@ -10,12 +10,11 @@ graph TD
     NamedDimsArrays --> SparseArraysBase(SparseArraysBase.jl)
     NamedDimsArrays --> DiagonalArrays(DiagonalArrays.jl)
     NamedDimsArrays --> BlockSparseArrays(BlockSparseArrays.jl)
+    NamedDimsArrays --> GradedArrays(GradedArrays.jl)
     NamedDimsArrays --> FusionTensors(FusionTensors.jl)
+    FusionTensors --> GradedArrays
+    GradedArrays --> BlockSparseArrays
     BlockSparseArrays --> SparseArraysBase
     BlockSparseArrays --> DiagonalArrays
-    BlockSparseArrays --> GradedUnitRanges(GradedUnitRanges.jl)
     DiagonalArrays --> SparseArraysBase
-    FusionTensors --> BlockSparseArrays
-    FusionTensors --> GradedUnitRanges
-    GradedUnitRanges --> SymmetrySectors(SymmetrySectors.jl)
 ```

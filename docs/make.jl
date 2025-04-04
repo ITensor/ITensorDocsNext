@@ -57,11 +57,11 @@ docs = [
       "SparseArraysBase",
       "DiagonalArrays",
       "TensorAlgebra",
+      "TensorProducts",
     ]),
   ),
   MultiDocumenter.DropdownNav(
-    "Symmetric Tensors",
-    itensor_multidocref.(["FusionTensors", "GradedUnitRanges", "SymmetrySectors"]),
+    "Symmetric Tensors", itensor_multidocref.(["FusionTensors", "GradedArrays"])
   ),
   MultiDocumenter.DropdownNav(
     "Graph Libraries", itensor_multidocref.(["NamedGraphs", "DataGraphs"])
