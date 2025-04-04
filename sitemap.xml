@@ -12,8 +12,8 @@
 <url><loc>https://itensor.github.io/ITensorDocsNext/DiagonalArrays/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/FusionTensors/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/FusionTensors/dev/reference/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/GradedUnitRanges/dev/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/GradedUnitRanges/dev/reference/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/GradedArrays/dev/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/GradedArrays/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/ITensorBase/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/ITensorBase/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/ITensorNetworks/dev/</loc></url>
@@ -28,10 +28,10 @@
 <url><loc>https://itensor.github.io/ITensorDocsNext/NamedGraphs/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/SparseArraysBase/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/SparseArraysBase/dev/reference/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/SymmetrySectors/dev/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/SymmetrySectors/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/TensorAlgebra/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/TensorAlgebra/dev/reference/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/TensorProducts/dev/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/TensorProducts/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/dev/lib/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/dev/type_interface/</loc></url>
