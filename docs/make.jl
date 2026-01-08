@@ -46,18 +46,18 @@ docs = [
     fix_canonical_url=false,
   ),
   MultiDocumenter.DropdownNav(
-    "Tensor Network Libraries", itensor_multidocref.(["ITensorNetworks"])
+    "Tensor Network Libraries", itensor_multidocref.(["ITensorNetworksNext"])
   ),
   MultiDocumenter.DropdownNav(
     "Array Libraries",
     itensor_multidocref.([
       "ITensorBase",
       "NamedDimsArrays",
+      "TensorAlgebra",
       "BlockSparseArrays",
       "SparseArraysBase",
       "DiagonalArrays",
-      "TensorAlgebra",
-      "TensorProducts",
+      "KroneckerArrays",
     ]),
   ),
   MultiDocumenter.DropdownNav(
@@ -69,7 +69,7 @@ docs = [
   MultiDocumenter.DropdownNav(
     "Developer Tools",
     itensor_multidocref.([
-      "DerivableInterfaces",
+      "FunctionImplementations",
       "TypeParameterAccessors",
       "MapBroadcast",
       "BackendSelection",
