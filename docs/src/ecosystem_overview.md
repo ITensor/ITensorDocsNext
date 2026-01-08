@@ -2,10 +2,9 @@
 
 ```mermaid
 graph TD
-    ITensorNetworks(ITensorNetworks.jl) --> ITensors(ITensors.jl)
-    ITensorNetworks --> DataGraphs(DataGraphs.jl)
+    ITensorNetworksNext(ITensorNetworksNext.jl) --> ITensorBase(ITensorBase.jl)
+    ITensorNetworksNext --> DataGraphs(DataGraphs.jl)
     DataGraphs --> NamedGraphs(NamedGraphs.jl)
-    ITensors --> ITensorBase(ITensorBase.jl)
     ITensorBase --> NamedDimsArrays(NamedDimsArrays.jl)
     NamedDimsArrays --> SparseArraysBase(SparseArraysBase.jl)
     NamedDimsArrays --> DiagonalArrays(DiagonalArrays.jl)
