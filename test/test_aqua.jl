@@ -1,5 +1,5 @@
-using ITensorDocsNext: ITensorDocsNext
 using Aqua: Aqua
+using ITensorDocsNext: ITensorDocsNext
 using Test: @testset
 
 @testset "Code quality (Aqua.jl)" begin

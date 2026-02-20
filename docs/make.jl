@@ -25,7 +25,7 @@ Documenter.makedocs(;
     modules = [ITensorDocsNext],
     warnonly = true,
     format = Documenter.HTML(; assets = ["assets/favicon.ico", "assets/extras.css"]),
-    pages = ["index.md", "ecosystem_overview.md", "upgrade_guide.md"],
+    pages = ["index.md", "ecosystem_overview.md", "upgrade_guide.md"]
 )
 
 @info "Building aggregate ITensorDocsNext site"
@@ -34,7 +34,7 @@ function itensor_multidocref(pkgname::String; clonedir::String = clonedir)
         upstream = joinpath(clonedir, pkgname),
         path = pkgname,
         name = pkgname,
-        giturl = "https://github.com/ITensor/$(pkgname).jl.git",
+        giturl = "https://github.com/ITensor/$(pkgname).jl.git"
     )
 end
 docs = [
@@ -43,7 +43,7 @@ docs = [
         upstream = joinpath(@__DIR__, "build"),
         path = "Overview",
         name = "Home",
-        fix_canonical_url = false,
+        fix_canonical_url = false
     ),
     MultiDocumenter.DropdownNav(
         "Tensor Network Libraries", itensor_multidocref.(["ITensorNetworksNext"])
@@ -60,7 +60,7 @@ docs = [
                 "DiagonalArrays",
                 "KroneckerArrays",
             ]
-        ),
+        )
     ),
     MultiDocumenter.DropdownNav(
         "Symmetric Tensors", itensor_multidocref.(["FusionTensors", "GradedArrays"])
@@ -78,7 +78,7 @@ docs = [
                 "BackendSelection",
                 "ITensorPkgSkeleton",
             ]
-        ),
+        )
     ),
 ]
 
@@ -94,7 +94,7 @@ MultiDocumenter.make(
     assets_dir = "docs/src/assets",
     brand_image = MultiDocumenter.BrandImage(
         "https://itensor.org", joinpath("assets", "logo-dark.png")
-    ),
+    )
 )
 
 if "deploy" in ARGS
