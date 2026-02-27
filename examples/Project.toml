@@ -3,3 +3,6 @@ ITensorDocsNext = "701fd796-f527-45da-9a53-2681c1a90c45"
 
 [compat]
 ITensorDocsNext = "0.1"
+
+[sources.ITensorDocsNext]
+path = ".."
