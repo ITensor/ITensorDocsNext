@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://itensor.github.io/ITensorDocsNext/BackendSelection/dev/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/BackendSelection/dev/reference/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/BackendSelection/stable/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/BackendSelection/stable/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/BlockSparseArrays/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/BlockSparseArrays/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/DataGraphs/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/DataGraphs/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/DiagonalArrays/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/DiagonalArrays/dev/reference/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/FunctionImplementations/dev/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/FunctionImplementations/dev/reference/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/FunctionImplementations/stable/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/FunctionImplementations/stable/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/FusionTensors/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/FusionTensors/dev/reference/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/GradedArrays/dev/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/GradedArrays/dev/reference/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/GradedArrays/stable/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/GradedArrays/stable/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/ITensorBase/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/ITensorBase/dev/reference/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/ITensorNetworksNext/dev/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/ITensorNetworksNext/dev/reference/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/ITensorNetworksNext/stable/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/ITensorNetworksNext/stable/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/ITensorPkgSkeleton/dev/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/ITensorPkgSkeleton/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/KroneckerArrays/dev/</loc></url>
@@ -30,9 +30,9 @@
 <url><loc>https://itensor.github.io/ITensorDocsNext/NamedGraphs/dev/reference/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/SparseArraysBase/stable/</loc></url>
 <url><loc>https://itensor.github.io/ITensorDocsNext/SparseArraysBase/stable/reference/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/TensorAlgebra/dev/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/TensorAlgebra/dev/reference/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/dev/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/dev/lib/</loc></url>
-<url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/dev/type_interface/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/TensorAlgebra/stable/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/TensorAlgebra/stable/reference/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/stable/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/stable/lib/</loc></url>
+<url><loc>https://itensor.github.io/ITensorDocsNext/TypeParameterAccessors/stable/type_interface/</loc></url>
 </urlset>
